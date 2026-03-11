@@ -6,14 +6,14 @@
   },
   "exported_at": "2026-03-11T00:00:00+00:00",
   "name": "nhub",
-  "author": "Nine (nine9334)",
+  "author": "nine@nineware.dev",
   "description": "A lightweight WebSocket hub for multi-server game server architectures. Enables global chat, server-to-server messaging, and RPC communication across game servers.",
   "features": null,
   "docker_images": {
-    "Node.js 22": "ghcr.io/parkervcp/yolks:nodejs_22"
+    "ghcr.io/parkervcp/yolks:nodejs_22": "ghcr.io/parkervcp/yolks:nodejs_22"
   },
   "file_denylist": [],
-  "startup": "node src/index.js",
+  "startup": "bash -c '[ ! -f src/index.js ] && git clone https://github.com/lt9nine/nhub.git . ; [ ! -d node_modules ] && npm install --omit=dev ; node src/index.js'",
   "config": {
     "files": "{}",
     "startup": "{\"done\": \"listening on port\"}",
@@ -22,8 +22,8 @@
   },
   "scripts": {
     "installation": {
-      "script": "#!/bin/bash\n\ncd /mnt/server\n\napt-get update -y\napt-get install -y git curl\n\nif [ -d \".git\" ]; then\n  echo \"[nhub] Updating existing installation...\"\n  git fetch --all\n  git reset --hard origin/main\nelse\n  echo \"[nhub] Cloning repository...\"\n  git clone https://github.com/lt9nine/nhub.git .\nfi\n\necho \"[nhub] Installing dependencies...\"\nnpm install --omit=dev\n\necho \"[nhub] Done.\"",
-      "container": "ghcr.io/parkervcp/yolks:nodejs_22",
+      "script": "apt update\napt install -y git\n\nmkdir -p /mnt/server\ncd /mnt/server\n\nif [ -d \".git\" ]; then\n  echo \"[nhub] Updating existing installation...\"\n  git fetch --all\n  git reset --hard origin/main\nelse\n  echo \"[nhub] Cloning repository...\"\n  git clone https://github.com/lt9nine/nhub.git .\nfi\n\necho \"[nhub] Done.\"",
+      "container": "ghcr.io/parkervcp/installers:debian",
       "entrypoint": "bash"
     }
   },
@@ -35,7 +35,7 @@
       "default_value": "{{server.build.default.port}}",
       "user_viewable": true,
       "user_editable": false,
-      "rules": "required|numeric|between:1024,65535",
+      "rules": "required",
       "field_type": "text"
     },
     {

@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(timeout 3 node src/index.js)"
+      "Bash(timeout 3 node src/index.js)",
+      "WebFetch(domain:pterodactyl.io)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ]
   }
 }

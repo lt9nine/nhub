@@ -6,7 +6,7 @@
   },
   "exported_at": "2026-03-11T00:00:00+00:00",
   "name": "nhub",
-  "author": "nhub",
+  "author": "Nine (nine9334)",
   "description": "A lightweight WebSocket hub for multi-server game server architectures. Enables global chat, server-to-server messaging, and RPC communication across game servers.",
   "features": null,
   "docker_images": {

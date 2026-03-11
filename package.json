@@ -1,0 +1,23 @@
+{
+  "name": "nhub",
+  "version": "1.0.0",
+  "description": "A lightweight WebSocket hub for multi-server game server architectures. Enables global chat, server-to-server messaging, and RPC communication across game servers.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lt9nine/nhub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lt9nine/nhub/issues"
+  },
+  "homepage": "https://github.com/lt9nine/nhub#readme",
+  "dependencies": {
+    "ws": "^8.19.0"
+  }
+}

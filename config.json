@@ -1,0 +1,8 @@
+{
+  "port": 8080,
+  "rpc_timeout_ms": 5000,
+  "servers": {
+    "lobby": "changeme-lobby-secret",
+    "survival": "changeme-survival-secret"
+  }
+}

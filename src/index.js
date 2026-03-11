@@ -4,11 +4,11 @@ const http = require('http');
 const { WebSocketServer } = require('ws');
 const Hub = require('./hub');
 
-const config = require('../config.json');
+const config = require('./config');
 
 const PORT = process.env.NHUB_PORT || config.port || 8080;
 
-const server = http.createServer((req, res) => {
+const server = http.createServer((_req, res) => {
   res.writeHead(200);
   res.end('nhub');
 });

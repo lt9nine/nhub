@@ -3,6 +3,8 @@
 A lightweight WebSocket hub for multi-server game server architectures.
 Enables global chat, server-to-server messaging, and RPC communication across game servers.
 
+Built with AI!
+
 - Single external dependency (`ws`)
 - JSON message transport
 - Designed to run as a Pterodactyl egg

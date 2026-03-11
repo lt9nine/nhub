@@ -1,6 +1,6 @@
 'use strict';
 
-const config = require('../config.json');
+const config = require('./config');
 
 /**
  * Validates an auth message from a connecting server.

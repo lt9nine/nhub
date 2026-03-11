@@ -1,6 +1,6 @@
 'use strict';
 
-const config = require('../config.json');
+const config = require('./config');
 
 /**
  * Tracks in-flight RPC calls and handles timeouts.
